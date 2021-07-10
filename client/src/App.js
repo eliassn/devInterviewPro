@@ -4,7 +4,6 @@ import Notification from './components/Notification'
 import VideoPlayer from './components/VideoPlayer'
 import Option from './components/Option'
 import {makeStyles} from '@material-ui/core/styles'
-import Editor from "@monaco-editor/react";
 
 const App = () => {
     const useStyles = makeStyles((theme)=>({
@@ -33,9 +32,7 @@ const App = () => {
           },
     }))
     const classes = useStyles()
-    function handleEditorChange(value, event) {
-      console.log("here is the current model value:", value);
-    }
+    
     return (
         <div className={classes.wrapper}>
         
@@ -47,12 +44,8 @@ const App = () => {
            <Option>
                <Notification />
            </Option>
-           <Editor style={{display: 'flex'}}
-     height="50vh"
-     defaultLanguage="javascript"
-     defaultValue="// some comment"
-     onChange={handleEditorChange}
-   />
+        
+   
         </div>
     )
 }
